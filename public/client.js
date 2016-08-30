@@ -49,6 +49,7 @@ $doors.empty();
 		$inner.appendTo($card);
 
 	var $Txt = $('<h2>');
+		$Txt.addClass('centerText');
 		$Txt.text(window.SystemInfo.doors[i].id + ': ' + window.SystemInfo.doors[i].ip);
 		$Txt.appendTo($inner);
 
@@ -136,6 +137,7 @@ $users.empty();
 		$inner.appendTo($card);
 
 	var $Txt = $('<h2>');
+		$Txt.addClass('centerText');
 		$Txt.text(JSON.stringify(window.SystemInfo.users[i].name));
 		$Txt.appendTo($inner);
 	}	
