@@ -37,7 +37,9 @@ function SetupDoorCards(){
 $doors.empty();
 	for (var i = 0; i < window.SystemInfo.doors.length; ++i) {
 
-		var $card = $('<div>');
+	var ipaddress = window.SystemInfo.doors[i].ip;
+
+	var $card = $('<div>');
 		$card.addClass('col-md-3');
 		$card.css('opacity', '100');
 		$card.appendTo($doors);
@@ -47,8 +49,74 @@ $doors.empty();
 		$inner.appendTo($card);
 
 	var $Txt = $('<h2>');
-		$Txt.text(JSON.stringify(window.SystemInfo.doors));
+		$Txt.text(window.SystemInfo.doors[i].id + ': ' + window.SystemInfo.doors[i].ip);
 		$Txt.appendTo($inner);
+
+		$actionBtns = $('<div>');
+		$actionBtns.addClass('btn-group-justified');
+		$actionBtns.attr('role', 'group');
+		$actionBtns.attr('aria-label', '...');
+		$actionBtns.appendTo($inner);
+
+		$lock = $('<a>');
+		$lock.addClass('btn');
+		$lock.addClass('btn-default');
+		$lock.addClass('btn-xs');
+		$lock.html('<span class="fa fa-lock"></span>');
+		$lock.appendTo($actionBtns);
+
+		$lock.on('click', function(){
+			$.ajax({
+				type: "POST",
+				url: 'http://' + ipaddress + '/Message',
+				data: "Message=lock",
+				dataType: 'x-www-form-urlencoded',
+				success: function() {
+					console.log('Success');
+	    		}
+			});
+			return false; 
+		});
+
+		$unlock = $('<a>');
+		$unlock.addClass('btn');
+		$unlock.addClass('btn-default');
+		$unlock.addClass('btn-xs');
+		$unlock.html('<span class="fa fa-unlock"></span>');
+		$unlock.appendTo($actionBtns);
+
+		$unlock.on('click', function(){
+			$.ajax({
+				type: "POST",
+				url: 'http://' + ipaddress + '/Message',
+				data: "Message=unlock",
+				dataType: 'x-www-form-urlencoded',
+				success: function() {
+					console.log('Success');
+	    		}
+			});
+			return false; 
+		});
+
+		$pulse_unlock = $('<a>');
+		$pulse_unlock.addClass('btn');
+		$pulse_unlock.addClass('btn-default');
+		$pulse_unlock.addClass('btn-xs');
+		$pulse_unlock.html('<span class="fa fa-unlock-alt"></span>' + '<span class="fa fa-clock-o"></span>');
+		$pulse_unlock.appendTo($actionBtns);
+
+		$pulse_unlock.on('click', function(){
+			$.ajax({
+				type: "POST",
+				url: 'http://' + ipaddress + '/Message',
+				data: "Message=long_pulse_unlock",
+				dataType: 'x-www-form-urlencoded',
+				success: function() {
+					console.log('Success');
+	    		}
+			});
+			return false; 
+		});
 	}	
 
 
@@ -85,7 +153,10 @@ function SetupLogCard(){
 		$inner.addClass('inner');
 		$inner.appendTo($card);
 
+for (var i = 0; i < window.SystemInfo.log.length; ++i) {
+
 	var $Txt = $('<h2>');
-		$Txt.text(JSON.stringify(window.SystemInfo.log));
+		$Txt.text(window.SystemInfo.log[i].time + ' ' + window.SystemInfo.log[i].name);
 		$Txt.appendTo($inner);
+	}
 }
