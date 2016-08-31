@@ -48,9 +48,9 @@ $doors.empty();
 		$inner.addClass('inner');
 		$inner.appendTo($card);
 
-	var $Txt = $('<h2>');
-		$Txt.addClass('centerText');
-		$Txt.text(window.SystemInfo.doors[i].id + ': ' + window.SystemInfo.doors[i].ip);
+	var $Txt = $('<h4>');
+		$Txt.text('Device id: ' + window.SystemInfo.doors[i].id + '\n' + 'Device ip: ' + window.SystemInfo.doors[i].ip);		
+		$Txt.html($Txt.html().replace(/\n/g,'<br/>'));
 		$Txt.appendTo($inner);
 
 		$actionBtns = $('<div>');
@@ -128,7 +128,7 @@ $users.empty();
 	for (var i = 0; i < window.SystemInfo.users.length; ++i) {
 
 		var $card = $('<div>');
-		$card.addClass('col-md-3');
+		$card.addClass('col-md-2');
 		$card.css('opacity', '100');
 		$card.appendTo($users);
 
@@ -136,9 +136,10 @@ $users.empty();
 		$inner.addClass('inner');
 		$inner.appendTo($card);
 
-	var $Txt = $('<h2>');
+	var $Txt = $('<h4>');
 		$Txt.addClass('centerText');
-		$Txt.text(JSON.stringify(window.SystemInfo.users[i].name));
+		$Txt.text(window.SystemInfo.users[i].name + '\n' + window.SystemInfo.users[i].id);
+		$Txt.html($Txt.html().replace(/\n/g,'<br/>'));
 		$Txt.appendTo($inner);
 	}	
 }
@@ -157,7 +158,7 @@ function SetupLogCard(){
 
 for (var i = 0; i < window.SystemInfo.log.length; ++i) {
 
-	var $Txt = $('<h2>');
+	var $Txt = $('<h4>');
 		$Txt.text(window.SystemInfo.log[i].time + ' ' + window.SystemInfo.log[i].name);
 		$Txt.appendTo($inner);
 	}

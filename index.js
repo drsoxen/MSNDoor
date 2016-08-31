@@ -39,6 +39,12 @@ app.post('/postEndpoint', function(req, res) {
 
     if(req.body.Type == 'Init')
     {
+        for (i = 0; i < SystemInfo.doors.length; i++) 
+        {
+            if(SystemInfo.doors[i].id == req.body.CtrlID)
+                SystemInfo.doors.splice(i, 1);
+        }
+
         SystemInfo.doors.push({id: req.body.CtrlID, ip:req.body.IP});
         
         res.end(JSON.stringify({"AccessLvl": "1"}));
@@ -87,3 +93,7 @@ app.use(express.static('public'));
 
 
 module.exports = app;
+
+
+
+// webClient.DownloadFile("http://192.168.1.244/image.jpg", @"C:\Users\Chris\Desktop\Carson\Server\Carson\Carson\bin\Debug\images\" + token + ".jpg");
