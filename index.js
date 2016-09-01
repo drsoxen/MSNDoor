@@ -45,7 +45,14 @@ app.post('/postEndpoint', function(req, res) {
                 SystemInfo.doors.splice(i, 1);
         }
 
-        SystemInfo.doors.push({id: req.body.CtrlID, ip:req.body.IP});
+        var doorName;
+        for (i = 0; i < Info.Doors.length; i++) 
+        {
+            if(req.body.CtrlID == Info.Doors[i].id)
+                doorName = Info.Doors[i].name;
+        }
+
+        SystemInfo.doors.push({id: doorName, ip:req.body.IP});
         
         res.end(JSON.stringify({"AccessLvl": "1"}));
     }

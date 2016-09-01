@@ -10,5 +10,15 @@
       "name": "Tag 1",
       "rtttl": "NULL"
     }
+  ],
+    "Doors": [
+    {
+      "id": "24.254.52.243.98.98",
+      "name": "Front Door"
+    },
+    {
+      "id": "24.254.52.250.67.67",
+      "name": "Back Door"
+    }
   ]
 }
