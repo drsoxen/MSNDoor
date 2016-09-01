@@ -3,12 +3,12 @@
     {
       "id": 728225708,
       "name": "Chris Ziraldo",
-      "rtttl": "smb:d=4,o=5,b=100:16e6,16e6,32p,8e6,16c6,8e6,8g6,8p,8g,8p"
+      "rtttl": "IndianaJones:d=4,o=5,b=250:e,8p,8f,8g,8p,2c.6,8p.,d,8p,8e,1f,p."
     },
     {
       "id": -633618766,
       "name": "Tag 1",
-      "rtttl": "NULL"
+      "rtttl": "smb:d=4,o=5,b=100:16e6,16e6,32p,8e6,16c6,8e6,8g6,8p,8g,8p"
     }
   ],
     "Doors": [
