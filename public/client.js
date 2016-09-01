@@ -159,7 +159,7 @@ function SetupLogCard(){
 for (var i = 0; i < window.SystemInfo.log.length; ++i) {
 
 	var $Txt = $('<h4>');
-		$Txt.text(window.SystemInfo.log[i].time + ' ' + window.SystemInfo.log[i].name);
+		$Txt.text(window.SystemInfo.log[i].name + ' : ' + window.SystemInfo.log[i].ctrlID + ' : ' + window.SystemInfo.log[i].time);
 		$Txt.appendTo($inner);
 	}
 }

@@ -1,14 +1,13 @@
 var express = require('express');
 var app = express();
-app.set('views', __dirname + '/pug')
-app.set('view engine', 'pug');
-
+var moment = require('moment');
+var bodyParser = require('body-parser')
 var fs = require('fs');
+
 var Info = JSON.parse(fs.readFileSync(__dirname + '/info.json', 'utf8'));
 
-var bodyParser = require('body-parser')
-
-
+app.set('views', __dirname + '/pug')
+app.set('view engine', 'pug');
 app.use(bodyParser.json());
 
 var CurrentOnlineDoors = [];
@@ -65,25 +64,35 @@ app.post('/postEndpoint', function(req, res) {
             {
                 user = Info.Users[i];
                 console.log(Info.Users[i].name)
-                LogEvent(Info.Users[i].name);
+                
             }
         }
 
         if(user)
+        {
+            var CtrlID;
+            for (i = 0; i < Info.Doors.length; i++) 
+            {
+                if(req.body.CtrlID == Info.Doors[i].id)
+                    CtrlID = Info.Doors[i];
+            }
+
+            LogEvent(user,CtrlID);
+
             res.end(JSON.stringify({"Access": "true", "RTTTL": user.rtttl}));
+        }
         else
+        {
+            LogEvent('Failed attempt');
             res.end(JSON.stringify({"Access": "false", "RTTTL": "NULL"}));
+        }
 
     }
 });
 
-function LogEvent(username)
+function LogEvent(user, CtrlID)
 {
-    var date = new Date();
-    var datestr = date.getFullYear() + "-" + (date.getMonth() + 1) + "-" + date.getDate() + " " +  date.getHours() + ":" + date.getMinutes() + ":" + date.getSeconds();
-
-
-    SystemInfo.log.unshift({time: datestr, name: username});
+    SystemInfo.log.unshift({time: moment().format('MMMM Do YYYY, h:mm:ss a'), name: user.name, ctrlID: CtrlID.name});
 }
 
 
