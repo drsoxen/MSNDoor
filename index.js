@@ -61,38 +61,36 @@ app.post('/postEndpoint', function(req, res) {
         for (i = 0; i < Info.Users.length; i++) 
         {
             if(req.body.ID == Info.Users[i].id)
-            {
                 user = Info.Users[i];
-                console.log(Info.Users[i].name)
-                
-            }
         }
 
-        if(user)
-        {
-            var CtrlID;
+        var CtrlID = null;
             for (i = 0; i < Info.Doors.length; i++) 
             {
                 if(req.body.CtrlID == Info.Doors[i].id)
                     CtrlID = Info.Doors[i];
             }
 
-            LogEvent(user,CtrlID);
-
+        if(user)
+        {
+            LogEvent(true,user,CtrlID);
             res.end(JSON.stringify({"Access": "true", "RTTTL": user.rtttl}));
         }
         else
         {
-            LogEvent('Failed attempt');
+            LogEvent(false,null,CtrlID);
             res.end(JSON.stringify({"Access": "false", "RTTTL": "NULL"}));
         }
 
     }
 });
 
-function LogEvent(user, CtrlID)
+function LogEvent(Access, User, CtrlID)
 {
-    SystemInfo.log.unshift({time: moment().format('MMMM Do YYYY, h:mm:ss a'), name: user.name, ctrlID: CtrlID.name});
+    if(Access)
+        SystemInfo.log.unshift({access: Access, time: moment().format('MMMM Do YYYY, h:mm:ss a'), name: User.name, ctrlID: CtrlID.name});
+    else
+        SystemInfo.log.unshift({access: Access, time: moment().format('MMMM Do YYYY, h:mm:ss a'), name: null, ctrlID: CtrlID.name});
 }
 
 
