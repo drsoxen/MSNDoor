@@ -65,7 +65,7 @@ $tennants.empty();
 				$.ajax({
 					type: "POST",
 					url: "/email",
-					data: {data: 'test'},
+					data: {data: tenant.email},
 					dataType: 'JSON',
 					success: function(msg){
                			console.log(success);
@@ -77,8 +77,6 @@ $tennants.empty();
 	var $inner = $('<div>');
 		$inner.addClass('inner');
 		$inner.appendTo($card);
-
-
 
 	var $Txt = $('<h4>');
 		$Txt.text(window.SystemInfo.tenants[i].company);		
