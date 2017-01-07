@@ -13,9 +13,7 @@ app.use(bodyParser.json());
 var CurrentOnlineDoors = [];
 
 var SystemInfo = {
-    users: Info.Users,
-    doors: [],
-    log: []
+    tenants: Info.Tenants
 }
 
 app.get('/', function(req, res) {
@@ -26,78 +24,9 @@ app.get('/health-check', function(req, res) {
     res.end('True');
 });
 
-app.post('/postEndpoint', function(req, res) {
-    console.log(req.body);
-
-    res.removeHeader('Connection');
-    res.removeHeader('Content-Length');
-    res.removeHeader('Content-Type');
-    res.removeHeader('Date');
-    res.removeHeader('X-Powered-By');
-    res.removeHeader('Transfer-encoding');
-
-    if(req.body.Type == 'Init')
-    {
-        for (i = 0; i < SystemInfo.doors.length; i++) 
-        {
-            if(SystemInfo.doors[i].id == req.body.CtrlID)
-                SystemInfo.doors.splice(i, 1);
-        }
-
-        var doorName;
-        for (i = 0; i < Info.Doors.length; i++) 
-        {
-            if(req.body.CtrlID == Info.Doors[i].id)
-                doorName = Info.Doors[i].name;
-        }
-
-        SystemInfo.doors.push({id: doorName, ip:req.body.IP});
-        
-        res.end(JSON.stringify({"AccessLvl": "1"}));
-    }
-    else if(req.body.Type == 'Auth')
-    {
-        var user = null;
-        for (i = 0; i < Info.Users.length; i++) 
-        {
-            if(req.body.ID == Info.Users[i].id)
-                user = Info.Users[i];
-        }
-
-        var CtrlID = null;
-            for (i = 0; i < Info.Doors.length; i++) 
-            {
-                if(req.body.CtrlID == Info.Doors[i].id)
-                    CtrlID = Info.Doors[i];
-            }
-
-        if(user)
-        {
-            LogEvent(true,user,CtrlID);
-            res.end(JSON.stringify({"Access": "true", "RTTTL": user.rtttl}));
-        }
-        else
-        {
-            LogEvent(false,null,CtrlID);
-            res.end(JSON.stringify({"Access": "false", "RTTTL": "NULL"}));
-        }
-
-    }
+app.post('/email', function(req, res) {
+	console.log(req.body);
 });
-
-function LogEvent(Access, User, CtrlID)
-{
-    if(Access)
-        SystemInfo.log.unshift({access: Access, time: moment().format('MMMM Do YYYY, h:mm:ss a'), name: User.name, ctrlID: CtrlID.name});
-    else
-        SystemInfo.log.unshift({access: Access, time: moment().format('MMMM Do YYYY, h:mm:ss a'), name: null, ctrlID: CtrlID.name});
-}
-
-
-app.post('/', function(req, res) {
-
-});
-
 
 app.listen(6969, function() {
     console.log('Door Server listening on port 6969!');
@@ -105,9 +34,4 @@ app.listen(6969, function() {
 
 app.use(express.static('public'));
 
-
 module.exports = app;
-
-
-
-// webClient.DownloadFile("http://192.168.1.244/image.jpg", @"C:\Users\Chris\Desktop\Carson\Server\Carson\Carson\bin\Debug\images\" + token + ".jpg");

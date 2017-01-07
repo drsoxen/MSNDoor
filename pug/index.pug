@@ -21,13 +21,17 @@ html(lang="en")
     script(src="/client.js")
   body.preload
       div.row
-        h1(id="title") Welcome to Makerspace North Door Server
+        h1(id="title") Welcome to Makerspace North
       div.row
-        h4() Doors:
-        div#Doors
-      div.row
-        h4() Users:
-        div#Users
-      div.row
-        h4() Log:
-        div#Log
+        h4() Tenants:
+        div#Tenants
+      #confirm-submit.modal.fade(tabindex='-1', role='dialog', aria-labelledby='myModalLabel', aria-hidden='false')
+        .modal-dialog
+          .modal-content
+            .modal-header#CompanyName
+              | Confirm
+            .modal-body#CompanyInfo
+              | Are you sure you want to do that?
+            .modal-footer
+              button.btn.btn-default(type='button', data-dismiss='modal') Cancel
+              a#submit.btn.btn-success.success(type='button', data-dismiss='modal') Send email telling them you are here

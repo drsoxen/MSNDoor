@@ -1,30 +1,25 @@
 {
-  "Users": [
+  "Tenants": [
+  	{
+  	  "company": "Makerspace North",
+      "name": "Sheri Chiprout",
+      "email": "sheri@makerspacenorth.com",
+      "phone": ""
+  	},
+
+  	{
+  		"company": "Krazatchu Design Systems",
+  		"name": "Michael Grant",
+  		"email": "michael@krazatchu.ca",
+  		"phone": ""
+  	},
+
     {
-      "id": 728225708,
+      "company": "The Canadian Maker",
       "name": "Chris Ziraldo",
-      "rtttl": "IndianaJones:d=4,o=5,b=250:e,8p,8f,8g,8p,2c.6,8p.,d,8p,8e,1f,p."
-    },
-    {
-      "id": -633618766,
-      "name": "Tag 1",
-      "rtttl": "smb:d=4,o=5,b=100:16e6,16e6,32p,8e6,16c6,8e6,8g6,8p,8g,8p"
+      "email": "chris@thecanadianmaker.com",
+      "phone": "613-853-2806"
     }
-    ,
-    {
-      "id": 1455970582,
-      "name": "Blank Card",
-      "rtttl": "Star Trek:d=4,o=5,b=63:8f.,16a#,d#.6,8d6,16a#.,16g.,16c.6,f6"
-    }
-  ],
-    "Doors": [
-    {
-      "id": "24.254.52.243.98.98",
-      "name": "Front Door"
-    },
-    {
-      "id": "24.254.52.250.67.67",
-      "name": "Back Door"
-    }
+
   ]
 }
