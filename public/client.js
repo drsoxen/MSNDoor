@@ -27,13 +27,6 @@ function Setup() {
 	SetupDoorCards();
 }
 
-function ajaxCall(data, url, sucessCallback, failureCallback, alwaysCallback)
-{
-	
-		return false;//so it doesn't scroll to the top
-}
-
-
 function SetupDoorCards(){
 $tennants.empty();
 	for (var i = 0; i < window.SystemInfo.tenants.length; ++i) {
@@ -55,9 +48,17 @@ $tennants.empty();
 			$companyname.css('text-align','center');
 
 			$companyinfo = $('#CompanyInfo');
-			$companyinfo.text(tenant.name + "\n" + tenant.email);
+			$companyinfo.text("");
 			$companyinfo.css('text-align','center');
 			$companyinfo.css('white-space', 'pre-wrap');
+
+			for (var i = 0; i < tenant.contacts.length; ++i) {
+				$tenantinfo = $('<div>');
+				$tenantinfo.addClass('inner');
+				$tenantinfo.addClass('col-md-3');
+				$tenantinfo.text(tenant.contacts[i].name + "\n" + tenant.contacts[i].email);
+				$tenantinfo.appendTo($companyinfo);
+			}
 
 			$submitButton = $('#submit.btn.btn-success.success');
 			var email = tenant.email;

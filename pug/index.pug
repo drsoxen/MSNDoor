@@ -1,7 +1,7 @@
 doctype html
 html(lang="en")
   head
-    title CHARIZARD.TECH
+    title MSN Directory
     script(src="/jquery-3.1.0.min.js")
     link(rel="stylesheet" href="/bootstrap-3.3.7-dist/css/bootstrap.min.css")
     script(src="/bootstrap-3.3.7-dist/js/bootstrap.min.js")
@@ -21,17 +21,16 @@ html(lang="en")
     script(src="/client.js")
   body.preload
       div.row
-        h1(id="title") Welcome to Makerspace North
+        h1(id="title", align="center") Welcome to Makerspace North
       div.row
-        h4() Tenants:
         div#Tenants
       #confirm-submit.modal.fade(tabindex='-1', role='dialog', aria-labelledby='myModalLabel', aria-hidden='false')
         .modal-dialog
           .modal-content
             .modal-header#CompanyName
-              | Confirm
-            .modal-body#CompanyInfo
-              | Are you sure you want to do that?
+            .modal-body
+              div.row
+                div#CompanyInfo
             .modal-footer
               button.btn.btn-default(type='button', data-dismiss='modal') Cancel
               a#submit.btn.btn-success.success(type='button', data-dismiss='modal') Send email telling them you are here
