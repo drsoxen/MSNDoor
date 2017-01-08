@@ -1,6 +1,6 @@
 var express = require('express');
 var app = express();
-var mailer = require('express-mailer');
+var nodemailer = require('nodemailer');
 var moment = require('moment');
 var bodyParser = require('body-parser')
 var fs = require('fs');
@@ -15,15 +15,19 @@ app.use(bodyParser.urlencoded({
     extended: true
 }));
 
+var transporter = nodemailer.createTransport('smtps://chris@etchedinstonestudios.com:TheCanadianMaker@smtp.gmail.com');
+
+
+
 // mailer.extend(app, {
-//   from: 'no-reply@example.com',
+//   from: 'chris@thecanadianmaker.com',
 //   host: 'smtp.gmail.com', // hostname
 //   secureConnection: true, // use SSL
-//   port: 465, // port for secure SMTP
+//   port: 587, // port for secure SMTP
 //   transportMethod: 'SMTP', // default is SMTP. Accepts anything that nodemailer accepts
 //   auth: {
-//     user: 'gmail.user@gmail.com',
-//     pass: 'userpass'
+//     user: 'chris@etchedinstonestudios.com',
+//     pass: 'TheCanadianMaker'
 //   }
 // });
 
@@ -44,19 +48,19 @@ app.get('/health-check', function(req, res) {
 app.post('/email', function(req, res) {
 	console.log(req.body.data);
 
-	// app.mailer.send('email', {
- //    to: req.body.data, // REQUIRED. This can be a comma delimited string just like a normal email to field. 
- //    subject: 'Someone is at the door', // REQUIRED.
- //    otherProperty: 'Other Property' // All additional properties are also passed to the template as local variables.
- //  }, function (err) {
- //    if (err) {
- //      // handle error
- //      console.log(err);
- //      res.send('There was an error sending the email');
- //      return;
- //    }
- //    res.send('Email Sent');
- //  });
+    var mailOptions = {
+        from: '"Chris Ziraldo" <chris@thecanadianmaker.com>', // sender address
+        to: req.body.data, // list of receivers
+        subject: 'There is someone at the door for you'
+    };
+
+    transporter.sendMail(mailOptions, function(error, info){
+        if(error){
+            return console.log(error);
+        }
+        console.log('Message sent: ' + info.response);
+    });
+
 });
 
 app.listen(6969, function() {
