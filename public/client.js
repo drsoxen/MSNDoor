@@ -49,30 +49,42 @@ $tennants.empty();
 
 			$companyinfo = $('#CompanyInfo');
 			$companyinfo.text("");
-			$companyinfo.css('text-align','center');
+			$companyinfo.css('text-align','left');
 			$companyinfo.css('white-space', 'pre-wrap');
 
-			for (var i = 0; i < tenant.contacts.length; ++i) {
+			for (var j = 0; j < tenant.contacts.length; ++j) {
 				$tenantinfo = $('<div>');
 				$tenantinfo.addClass('inner');
 				$tenantinfo.addClass('col-md-3');
-				$tenantinfo.text(tenant.contacts[i].name + "\n" + tenant.contacts[i].email);
+				$tenantinfo.text(tenant.contacts[j].name + "\n" + tenant.contacts[j].email);
+				
 				$tenantinfo.appendTo($companyinfo);
+
+				$emailBtn = $('<button>');
+				$emailBtn.css('float','right');
+				$emailBtn.attr('tenantindex', j);
+				// $emailBtn.addClass('btn-default');
+				// $emailBtn.addClass('btn-xs');
+				$emailBtn.html('<span class="fa fa-bell"> Tell them you\'re here</span>');
+
+				$emailBtn.on('click', function() { 
+					$.ajax({
+						type: "POST",
+						url: "/email",
+						data: {data: tenant.contacts[$(this).attr('tenantindex')].email},
+						dataType: 'JSON',
+						success: function(msg){
+	               			console.log(success);
+	                      }
+	                    });
+					});
+
+				$emailBtn.appendTo($tenantinfo);
 			}
 
 			$submitButton = $('#submit.btn.btn-success.success');
 			var email = tenant.email;
-			$submitButton.on('click', function() { 
-				$.ajax({
-					type: "POST",
-					url: "/email",
-					data: {data: tenant.email},
-					dataType: 'JSON',
-					success: function(msg){
-               			console.log(success);
-                      }
-                    });
-				});
+
 			});
 
 	var $inner = $('<div>');
