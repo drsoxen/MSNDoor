@@ -34,7 +34,7 @@ var SystemInfo = {
 }
 
 app.get('/', function(req, res) {
-    res.render('index', {SystemInfo});
+    res.render('index', {SystemInfo:SystemInfo});
 });
 
 app.get('/health-check', function(req, res) {

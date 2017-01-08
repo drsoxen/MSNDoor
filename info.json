@@ -1,25 +1,214 @@
 {
   "Tenants": [
-  	{
-  	  "company": "Makerspace North",
-      "name": "Sheri Chiprout",
-      "email": "sheri@makerspacenorth.com",
-      "phone": ""
-  	},
-
-  	{
-  		"company": "Krazatchu Design Systems",
-  		"name": "Michael Grant",
-  		"email": "michael@krazatchu.ca",
-  		"phone": ""
-  	},
-
+    {
+      "company": "Makerspace North",
+      "contacts":[
+        {
+          "name" : "Sheri Chiprout",
+          "email": "sheri@makerspacenorth.com",
+          "phone": "613-276-0110"
+        },
+        {
+          "name" : "Ashley Mconnell ",
+          "email": "ashley@makerspacenorth.com",
+          "phone": "613-299-4451"
+        },
+        {
+          "name" : "Morgan Berson",
+          "email": "morgan@makerspacenorth.com",
+          "phone": "613-854-8616"
+        }
+      ]
+    },
+    {
+      "company": "CNC Ottawa",
+      "contacts":[
+        {
+          "name" : "Derrick Smiley",
+          "email": "derrick@cncottawa.ca",
+          "phone": "613-805-0162"
+        },
+        {
+          "name" : "Justin Tessier",
+          "email": "justin@cncottawa.ca",
+          "phone": "613-600-6201"
+        }
+      ]
+    },
+    {
+      "company": "Education  3d printing",
+      "contacts":[
+        {
+          "name" : "Rick Alexanderson",
+          "email": "makerworkshops@gmail.com",
+          "phone": "613-255-6822"
+        }
+      ]
+    },
     {
       "company": "The Canadian Maker",
-      "name": "Chris Ziraldo",
-      "email": "chris@thecanadianmaker.com",
-      "phone": "613-853-2806"
+      "contacts":[
+        {
+          "name" : "Chris Ziraldo",
+          "email": "chris@thecanadianmaker.com",
+          "phone": "613-853-2806"
+        }
+      ]
+    },
+    {
+      "company": "Ottawa Tool Library",
+      "contacts":[
+        {
+          "name" : "Bettina Vollmerhausen",
+          "email": "bettina@ottawatoollibrary.com",
+          "phone": "613-277-3514"
+        },
+        {
+          "name" : "Frederic Sune",
+          "email": "hello@ottawatoollibrary.com",
+          "phone": "613-875-4742"
+        }
+      ]
+    },
+    {
+      "company": "Red Rabbit",
+      "contacts":[
+        {
+          "name" : "Tim Cropley",
+          "email": "info@redrabbit.ca",
+          "phone": "613-288-5834"
+        }
+      ]
+    },
+    {
+      "company": "Krazatchu",
+      "contacts":[
+        {
+          "name" : "Michael Grant",
+          "email": "michael@krazatchu.ca",
+          "phone": "613 805 7164"
+        }
+      ]
+    },
+    {
+      "company": "Ottawa City Woodshop",
+      "contacts":[
+        {
+          "name" : "Matt Wallace",
+          "email": "matt@ottawacitywoodshop.com",
+          "phone": "613-325-6451"
+        },
+        {
+          "name" : "Mike Grigoriev",
+          "email": "mike@ottawacitywoodshop.com",
+          "phone": "613-700-9698"
+        }
+      ]
+    },
+    {
+      "company": "Tahi Technologies",
+      "contacts":[
+        {
+          "name" : "Tariq Maksoud",
+          "email": "tariq@tahi.me",
+          "phone": "416-731-1615"
+        },
+        {
+          "name" : "Ahmed Noman",
+          "email": "ahmed@tahi.me",
+          "phone": "613-413-3535"
+        },
+        {
+          "name" : "Steve Haskins",
+          "email": "stevehaskins90@gmail.com",
+          "phone": "613-882-0513"
+        },
+        {
+          "name" : "Khalid Aboujassoum",
+          "email": "khalid@tahi.me",
+          "phone": "613-700-3633"
+        }
+      ]
+    },
+    {
+      "company": "M Cubed Inc.",
+      "contacts":[
+        {
+          "name" : "Mary Mclure",
+          "email": "MMcClure@MCubed.ca",
+          "phone": "613-262-4006"
+        },
+        {
+          "name" : "Mike Nilson",
+          "email": "MNilson@gmail.com",
+          "phone": "613-261-4006"
+        },
+        {
+          "name" : "Victoria Murphy",
+          "email": "torymurphy@gmail.com",
+          "phone": "613-400-2893"
+        },
+        {
+          "name" : "Matthew DiGiuseppe",
+          "email": "mattdigiuseppe@gmail.com",
+          "phone": "613-302-7987"
+        }
+      ]
+    },
+    {
+      "company": "The Greater Good",
+      "contacts":[
+        {
+          "name" : "Kevin Kelly",
+          "email": "kevin@thegreatergood.cc",
+          "phone": "613-251-0141"
+        },
+        {
+          "name" : "Corbin Dowd",
+          "email": "dowd.corbin@gmail.com",
+          "phone": "613-715-1616"
+        },
+        {
+          "name" : "Remie Geoffroi",
+          "email": "remie@thegreatergood.cc",
+          "phone": "613-868-8155"
+        },
+        {
+          "name" : "Ian Rapsey",
+          "email": "Ian@thegreatergood.cc",
+          "phone": "416 709 2169"
+        }
+      ]
+    },
+    {
+      "company": "Make613.com",
+      "contacts":[
+        {
+          "name" : "Justin Maheux",
+          "email": "justin@maheux.ca",
+          "phone": "613-720-7062"
+        }
+      ]
+    },
+    {
+      "company": "spectrasonic",
+      "contacts":[
+        {
+          "name" : "Shawn Scallen",
+          "email": "scallen@spectrasonic.com",
+          "phone": "613-265-1253"
+        }
+      ]
+    },
+    {
+      "company": "The Clever Print Shop",
+      "contacts":[
+        {
+          "name" : "Forrest Vetter-Wilson",
+          "email": "Forrest@beclever.ca",
+          "phone": "514-557-2851"
+        }
+      ]
     }
-
   ]
 }
