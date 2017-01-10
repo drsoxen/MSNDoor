@@ -46,7 +46,8 @@
         {
           "name" : "Rick Alexanderson",
           "email": "makerworkshops@gmail.com",
-          "phone": "613-255-6822"
+          "phone": "613-255-6822",
+          "emailBtn": false
         }
       ]
     },
@@ -71,7 +72,8 @@
         {
           "name" : "Bettina Vollmerhausen",
           "email": "bettina@ottawatoollibrary.com",
-          "phone": "613-277-3514"
+          "phone": "613-277-3514",
+          "emailBtn": false
         }
       ]
     },
@@ -103,12 +105,14 @@
         {
           "name" : "Matt Wallace",
           "email": "matt@ottawacitywoodshop.com",
-          "phone": "613-325-6451"
+          "phone": "613-325-6451",
+          "emailBtn": false
         },
         {
           "name" : "Mike Grigoriev",
           "email": "mike@ottawacitywoodshop.com",
-          "phone": "613-700-9698"
+          "phone": "613-700-9698",
+          "emailBtn": false
         }
       ]
     },
@@ -124,17 +128,20 @@
         {
           "name" : "Ahmed Noman",
           "email": "ahmed@tahi.me",
-          "phone": "613-413-3535"
+          "phone": "613-413-3535",
+          "emailBtn": false
         },
         {
           "name" : "Steve Haskins",
           "email": "stevehaskins90@gmail.com",
-          "phone": "613-882-0513"
+          "phone": "613-882-0513",
+          "emailBtn": false
         },
         {
           "name" : "Khalid Aboujassoum",
           "email": "khalid@tahi.me",
-          "phone": "613-700-3633"
+          "phone": "613-700-3633",
+          "emailBtn": false
         }
       ]
     },
@@ -150,17 +157,20 @@
         {
           "name" : "Mike Nilson",
           "email": "MNilson@gmail.com",
-          "phone": "613-261-4006"
+          "phone": "613-261-4006",
+          "emailBtn": false
         },
         {
           "name" : "Victoria Murphy",
           "email": "torymurphy@gmail.com",
-          "phone": "613-400-2893"
+          "phone": "613-400-2893",
+          "emailBtn": false
         },
         {
           "name" : "Matthew DiGiuseppe",
           "email": "mattdigiuseppe@gmail.com",
-          "phone": "613-302-7987"
+          "phone": "613-302-7987",
+          "emailBtn": false
         }
       ]
     },
@@ -170,22 +180,26 @@
         {
           "name" : "Kevin Kelly",
           "email": "kevin@thegreatergood.cc",
-          "phone": "613-251-0141"
+          "phone": "613-251-0141",
+          "emailBtn": false
         },
         {
           "name" : "Corbin Dowd",
           "email": "dowd.corbin@gmail.com",
-          "phone": "613-715-1616"
+          "phone": "613-715-1616",
+          "emailBtn": false
         },
         {
           "name" : "Remie Geoffroi",
           "email": "remie@thegreatergood.cc",
-          "phone": "613-868-8155"
+          "phone": "613-868-8155",
+          "emailBtn": false
         },
         {
           "name" : "Ian Rapsey",
           "email": "Ian@thegreatergood.cc",
-          "phone": "416 709 2169"
+          "phone": "416 709 2169",
+          "emailBtn": false
         }
       ]
     },
@@ -194,12 +208,14 @@
       "contacts":[
         {
           "name" : "Dave Hunt",
-          "email": "dave@huntgang.com"
+          "email": "dave@huntgang.com",
+          "emailBtn": true
         },
                 {
           "name" : "Justin Maheux",
           "email": "justin@maheux.ca",
-          "phone": "613-720-7062"
+          "phone": "613-720-7062",
+          "emailBtn": false
         }
       ]
     },
@@ -209,7 +225,8 @@
         {
           "name" : "Shawn Scallen",
           "email": "scallen@spectrasonic.com",
-          "phone": "613-265-1253"
+          "phone": "613-265-1253",
+          "emailBtn": false
         }
       ]
     },
