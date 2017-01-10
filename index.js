@@ -15,7 +15,7 @@ app.use(bodyParser.urlencoded({
     extended: true
 }));
 
-var transporter = nodemailer.createTransport('smtps://chris%40etchedinstonestudios.com:TheCanadianMaker@smtp.gmail.com');
+var transporter = nodemailer.createTransport('smtps://msndoor%40gmail.com:makerspace@smtp.gmail.com');
 
 // var transporter = nodemailer.createTransport({
 //     service: 'Gmail',
@@ -33,7 +33,7 @@ app.post('/email', function(req, res) {
     console.log(req.body.data);
 
     transporter.sendMail({
-      from: 'chris@thecanadianmaker.com',
+      from: 'msndoor@gmail.com',
       to: req.body.data,
       subject: 'There is someone at the door for you',
       text: ''

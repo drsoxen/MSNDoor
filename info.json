@@ -6,17 +6,20 @@
         {
           "name" : "Sheri Chiprout",
           "email": "sheri@makerspacenorth.com",
-          "phone": "613-276-0110"
+          "phone": "613-276-0110",
+          "emailBtn": true
         },
         {
           "name" : "Ashley Mconnell ",
           "email": "ashley@makerspacenorth.com",
-          "phone": "613-299-4451"
+          "phone": "613-299-4451",
+          "emailBtn": true
         },
         {
           "name" : "Morgan Berson",
           "email": "morgan@makerspacenorth.com",
-          "phone": "613-854-8616"
+          "phone": "613-854-8616",
+          "emailBtn": true
         }
       ]
     },
@@ -26,12 +29,14 @@
         {
           "name" : "Derrick Smiley",
           "email": "derrick@cncottawa.ca",
-          "phone": "613-805-0162"
+          "phone": "613-805-0162",
+          "emailBtn": true
         },
         {
           "name" : "Justin Tessier",
           "email": "justin@cncottawa.ca",
-          "phone": "613-600-6201"
+          "phone": "613-600-6201",
+          "emailBtn": true
         }
       ]
     },
@@ -51,7 +56,7 @@
         {
           "name" : "Chris Ziraldo",
           "email": "chris@thecanadianmaker.com",
-          "phone": "613-853-2806"
+          "emailBtn": true
         }
       ]
     },
@@ -59,14 +64,14 @@
       "company": "Ottawa Tool Library",
       "contacts":[
         {
+          "name" : "General Inquiries",
+          "email": "hello@ottawatoollibrary.com",
+          "emailBtn": true
+        },
+        {
           "name" : "Bettina Vollmerhausen",
           "email": "bettina@ottawatoollibrary.com",
           "phone": "613-277-3514"
-        },
-        {
-          "name" : "Frederic Sune",
-          "email": "hello@ottawatoollibrary.com",
-          "phone": "613-875-4742"
         }
       ]
     },
@@ -76,7 +81,8 @@
         {
           "name" : "Tim Cropley",
           "email": "info@redrabbit.ca",
-          "phone": "613-288-5834"
+          "phone": "613-288-5834",
+          "emailBtn": true
         }
       ]
     },
@@ -85,8 +91,9 @@
       "contacts":[
         {
           "name" : "Michael Grant",
-          "email": "michael@krazatchu.ca",
-          "phone": "613 805 7164"
+          "email": "krazatchu@gmail.com",
+          "phone": "613-805-7164",
+          "emailBtn": true
         }
       ]
     },
@@ -111,7 +118,8 @@
         {
           "name" : "Tariq Maksoud",
           "email": "tariq@tahi.me",
-          "phone": "416-731-1615"
+          "phone": "416-731-1615",
+          "emailBtn": true
         },
         {
           "name" : "Ahmed Noman",
@@ -136,7 +144,8 @@
         {
           "name" : "Mary Mclure",
           "email": "MMcClure@MCubed.ca",
-          "phone": "613-262-4006"
+          "phone": "613-262-4006",
+          "emailBtn": true
         },
         {
           "name" : "Mike Nilson",
@@ -184,6 +193,10 @@
       "company": "Make613.com",
       "contacts":[
         {
+          "name" : "Dave Hunt",
+          "email": "dave@huntgang.com"
+        },
+                {
           "name" : "Justin Maheux",
           "email": "justin@maheux.ca",
           "phone": "613-720-7062"
@@ -191,7 +204,7 @@
       ]
     },
     {
-      "company": "spectrasonic",
+      "company": "Spectrasonic",
       "contacts":[
         {
           "name" : "Shawn Scallen",
@@ -206,7 +219,8 @@
         {
           "name" : "Forrest Vetter-Wilson",
           "email": "Forrest@beclever.ca",
-          "phone": "514-557-2851"
+          "phone": "514-557-2851",
+          "emailBtn": true
         }
       ]
     }
